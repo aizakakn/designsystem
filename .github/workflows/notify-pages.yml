@@ -1,0 +1,33 @@
+name: Notify pages repos when tokens.css changes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/styles/tokens.css"
+  workflow_dispatch:
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch tokens_updated to pages repos
+        env:
+          GH_TOKEN: ${{ secrets.PAGES_DISPATCH_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          repos=(
+            "aizakakn/vb-point-ui"
+            "aizakakn/vb-point-ui-B"
+            "aizakakn/shitadori"
+          )
+
+          for repo in "${repos[@]}"; do
+            echo "Dispatching to $repo"
+            curl -L --fail -X POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              "https://api.github.com/repos/${repo}/dispatches" \
+              -d '{"event_type":"tokens_updated"}'
+          done

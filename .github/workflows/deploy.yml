@@ -38,6 +38,15 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Copy shared layout into dist
+        shell: bash
+        run: |
+          set -eux
+          mkdir -p dist/shared/layout
+          cp -f public/shared/layout/AppLayout.vue  dist/shared/layout/AppLayout.vue
+          cp -f public/shared/layout/SiteHeader.vue dist/shared/layout/SiteHeader.vue
+          cp -f public/shared/layout/SiteFooter.vue dist/shared/layout/SiteFooter.vue
+
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

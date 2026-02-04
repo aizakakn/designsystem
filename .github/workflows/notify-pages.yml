@@ -2,10 +2,9 @@ name: Notify pages repos when tokens.css changes
 
 on:
   push:
-    branches: [main]
-    paths:
-      - "src/styles/tokens.css"
+    branches: [ main ]
   workflow_dispatch:
+
 
 jobs:
   dispatch:

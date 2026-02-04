@@ -35,6 +35,6 @@ export {
 } from './utils/toCSSVariables';
 
 // Layoutコンポーネントのエクスポート
-export { default as AppLayout } from './components/layout/AppLayout.vue';
-export { default as SiteHeader } from './components/layout/SiteHeader.vue';
-export { default as SiteFooter } from './components/layout/SiteFooter.vue';
+export { default as AppLayout } from "./components/layout/AppLayout.vue";
+export { default as SiteHeader } from "./components/layout/SiteHeader.vue";
+export { default as SiteFooter } from "./components/layout/SiteFooter.vue";

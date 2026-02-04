@@ -1,3 +1,5 @@
+# designsystem 更新時に各ページへ通知する
+
 name: Notify pages repos when tokens.css changes
 
 on:

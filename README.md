@@ -1,6 +1,7 @@
 # VALUE BOOKS Design System
 
 VALUE BOOKS Design System のデザイントークンとVue/Vuetifyコンポーネントライブラリです。
+tokens.css は designsystem から自動で同期されます
 
 ## 概要
 

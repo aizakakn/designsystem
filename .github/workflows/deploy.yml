@@ -29,11 +29,15 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install
+            - name: Install
         run: npm ci
+
+      - name: Export layout components
+        run: npm run export-layout
 
       - name: Build
         run: npm run build
+
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

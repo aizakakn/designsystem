@@ -15,7 +15,8 @@
     "build": "vite build",
     "dev": "vite",
     "type-check": "vue-tsc --noEmit",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "export-layout": "bash scripts/export-layout.sh"
   },
   "keywords": [
     "design-system",

@@ -53,6 +53,21 @@ jobs:
           cp -f public/shared/layout/SiteHeader.vue dist/shared/layout/SiteHeader.vue
           cp -f public/shared/layout/SiteFooter.vue dist/shared/layout/SiteFooter.vue
 
+      - name: Copy shared icons into dist
+        shell: bash
+        run: |
+          set -eux
+          mkdir -p dist/shared/icons
+          cp -f public/shared/icons/VBIcon.vue dist/shared/icons/VBIcon.vue
+          cp -f public/shared/icons/mdi.ts     dist/shared/icons/mdi.ts
+          
+      - name: Debug dist/shared/icons
+        shell: bash
+        run: |
+          set -eux
+          ls -la dist/shared/icons
+    
+
       - name: Debug dist/shared/layout
         shell: bash
         run: |

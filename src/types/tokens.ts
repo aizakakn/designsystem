@@ -113,6 +113,14 @@ export interface BrandTokens {
   spacing: {
     base: SpacingToken;
   };
+  icons: {
+    library: string; // アイコンライブラリ名
+    url: string; // アイコンライブラリのURL
+  };
+  components: {
+    framework: string; // コンポーネントフレームワーク名
+    url: string; // フレームワークのURL
+  };
 }
 
 /**

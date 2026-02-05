@@ -42,6 +42,8 @@ Figmaから取得した実際の値を基に定義：
 - **カラー**: Brand Color (VB Teal), Service Colors, Semantic Colors, Gray Scale
 - **タイポグラフィ**: フォントファミリー、サイズ、ウェイト、行間、文字間隔
 - **スペーシング**: 基準単位
+- **アイコン**: Material Design Icons (MDI) を使用
+- **コンポーネント**: Vuetify を基本フレームワークとして使用
 
 ### 3. Aliasコレクション (`src/tokens/alias.ts`)
 brandの値を参照する形で定義：

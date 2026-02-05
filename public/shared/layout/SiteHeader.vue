@@ -62,18 +62,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import iconTruck from '../../assets/images/header/icon-truck.svg?url';
-import iconLibrary from '../../assets/images/header/icon-library.svg?url';
+import { ref } from 'vue'
 
-const searchQuery = ref('');
+import logoImage from '../../assets/images/header/logo.svg?url'
+import iconTruck from '../../assets/images/header/icon-truck.svg?url'
+import iconLibrary from '../../assets/images/header/icon-library.svg?url'
+import iconCart from '../../assets/images/header/icon-cart.svg?url'
+import iconLogin from '../../assets/images/header/icon-login.svg?url'
+import iconSearch from '../../assets/images/header/icon-search.svg?url'
+import iconEndpaper from '../../assets/images/header/icon-endpaper.svg?url'
 
-// Figmaから取得した最新の画像URL（7日間有効）
-const logoImage = 'https://www.figma.com/api/mcp/asset/7ac81632-f592-46e9-a9f1-143a65cb8414';
-const iconCart = 'https://www.figma.com/api/mcp/asset/2aadd22a-f942-47c0-acc4-cebe1ec386c1';
-const iconLogin = 'https://www.figma.com/api/mcp/asset/b18b3e36-b4bf-40fe-b00e-7b78900a1059';
-const iconSearch = 'https://www.figma.com/api/mcp/asset/8f82b96c-dcb6-47ae-8bcc-ddb53b9339d0';
-const iconEndpaper = 'https://www.figma.com/api/mcp/asset/27c24175-5eaf-475b-bd6b-96c2cbaad1bf';
+const searchQuery = ref('')
+
+
 </script>
 
 <style scoped>

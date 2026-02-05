@@ -72,4 +72,12 @@ export const brandTokens: BrandTokens = {
   spacing: {
     base: 4, // 4pxを基準単位とする（推測値）
   },
+  icons: {
+    library: 'Material Design Icons',
+    url: 'https://pictogrammers.com/library/mdi/',
+  },
+  components: {
+    framework: 'Vuetify',
+    url: 'https://vuetifyjs.com/ja/',
+  },
 };

@@ -16,6 +16,7 @@
             <v-tab value="buttons">ボタン</v-tab>
             <v-tab value="typography">タイポグラフィ</v-tab>
             <v-tab value="common">共通パーツ</v-tab>
+            <v-tab value="resources">リソース</v-tab>
           </v-tabs>
           
           <v-card-text>
@@ -39,6 +40,10 @@
               <v-window-item value="common">
                 <LayoutShowcase />
               </v-window-item>
+              
+              <v-window-item value="resources">
+                <ResourcesShowcase />
+              </v-window-item>
             </v-window>
           </v-card-text>
         </v-card>
@@ -53,6 +58,7 @@ import ButtonShowcase from './components/ButtonShowcase.vue';
 import ColorShowcase from './components/ColorShowcase.vue';
 import TypographyShowcase from './components/TypographyShowcase.vue';
 import LayoutShowcase from './components/LayoutShowcase.vue';
+import ResourcesShowcase from './components/ResourcesShowcase.vue';
 
 const error = ref<string | null>(null);
 const tab = ref('colors');

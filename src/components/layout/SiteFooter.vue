@@ -158,6 +158,7 @@ const logoBcorp = `${BASE}/logo_bcorp.svg`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding: 0 16px;
 }
 
 .footer-main {
@@ -312,5 +313,39 @@ const logoBcorp = `${BASE}/logo_bcorp.svg`
 
 .footer-copyright {
   font-size: 8px;
+}
+
+/* モバイル対応 */
+@media (max-width: 960px) {
+  .site-footer {
+    padding: 40px 0;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-center {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-links {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 </style>

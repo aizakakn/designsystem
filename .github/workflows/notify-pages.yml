@@ -1,12 +1,21 @@
-# designsystem 更新時に各ページへ通知する
+# designsystem 更新時に各ページへ通知する（tokens + layout + assets）
 
-name: Notify pages repos when tokens.css changes
+name: Notify pages repos when shared assets change
 
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
+    paths:
+      # tokens
+      - "src/styles/tokens.css"
 
+      # layout 配布物（あなたが public/shared/layout に置いている前提）
+      - "public/shared/layout/**"
+
+      # header/footer で参照する画像（public に集約した前提）
+      - "public/assets/images/**"
+
+  workflow_dispatch:
 
 jobs:
   dispatch:
@@ -21,7 +30,7 @@ jobs:
           repos=(
             "aizakakn/vb-point-ui"
             "aizakakn/vb-point-ui-B"
-            "aizakakn/shitadori"
+            "aizakakn/vb-shitadori"
           )
 
           for repo in "${repos[@]}"; do

@@ -65,33 +65,70 @@
 
       <!-- モバイル表示 -->
       <div class="header-mobile">
-        <button class="mobile-menu-button" @click="toggleMobileMenu">
-          <VBIcon name="menu" label="メニュー" class="mobile-icon" />
-        </button>
-
-        <a href="/" class="mobile-logo-link">
-          <div class="vb-logo-mobile">
-            <img
-              :src="logoImage"
-              alt="VALUE BOOKS"
-              class="logo-image"
-            />
+        <!-- 上部線 -->
+        <div class="mobile-top-line"></div>
+        
+        <!-- メイン部分 -->
+        <div class="mobile-main-row">
+          <!-- 左側: ロゴ + 検索ボックス -->
+          <div class="mobile-left-section">
+            <a href="/" class="mobile-logo-link">
+              <div class="vb-logo-mobile">
+                <img
+                  :src="logoImage"
+                  alt="VALUE BOOKS"
+                  class="logo-image"
+                />
+              </div>
+            </a>
+            
+            <div class="mobile-search-box">
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="気になる本を検索"
+                class="mobile-search-input"
+              />
+              <VBIcon name="camera" label="カメラ" class="mobile-camera-icon" />
+            </div>
           </div>
-        </a>
-
-        <div class="mobile-right-icons">
-          <button class="mobile-icon-button">
-            <VBIcon name="camera" label="カメラ" class="mobile-icon camera-icon" />
-          </button>
-
-          <a href="#" class="mobile-icon-button">
-            <VBIcon name="account" label="ログイン" class="mobile-icon" />
-          </a>
-
-          <div class="mobile-icon-button">
-            <VBIcon name="cart" label="カート" class="mobile-icon" />
+          
+          <!-- 右側: アイコン -->
+          <div class="mobile-right-icons">
+            <a href="#" class="mobile-icon-button">
+              <VBIcon name="account" label="ログイン" class="mobile-icon" />
+            </a>
+            
+            <div class="mobile-icon-button">
+              <VBIcon name="cart" label="カート" class="mobile-icon" />
+            </div>
+            
+            <button class="mobile-icon-button" @click="toggleMobileMenu">
+              <VBIcon name="menu" label="メニュー" class="mobile-icon" />
+            </button>
           </div>
         </div>
+        
+        <!-- ナビゲーション部分 -->
+        <div class="mobile-nav-row">
+          <a href="#" class="mobile-nav-link">
+            <VBIcon name="truck" label="買取申込み" class="mobile-nav-icon" />
+            <span class="mobile-nav-text">買取申込み</span>
+          </a>
+          
+          <a href="#" class="mobile-nav-link">
+            <VBIcon name="bookshelf" label="ライブラリ" class="mobile-nav-icon" />
+            <span class="mobile-nav-text">ライブラリ</span>
+          </a>
+          
+          <a href="#" class="mobile-nav-link">
+            <VBIcon name="bookOpenVariant" label="読みもの" class="mobile-nav-icon" />
+            <span class="mobile-nav-text">読みもの</span>
+          </a>
+        </div>
+        
+        <!-- 下部線 -->
+        <div class="mobile-under-line"></div>
       </div>
     </div>
   </v-app-bar>
@@ -233,44 +270,93 @@ const logoImage = '/designsystem/assets/images/header/logo.svg'
 /* モバイル表示 */
 .header-mobile {
   display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--vb-color-base-white);
+}
+
+.mobile-top-line {
+  height: 4px;
+  width: 100%;
+  background-color: var(--vb-color-background-default, #F5F5F5);
+}
+
+.mobile-main-row {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
-  padding: 0 16px;
+  height: 50px;
+  padding-right: 16px;
 }
 
-.mobile-menu-button {
-  background: none;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
+.mobile-left-section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  gap: 0;
 }
 
 .mobile-logo-link {
   display: flex;
   align-items: center;
+  padding: 16px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .vb-logo-mobile {
-  height: 16px;
-  width: 120px;
+  height: 18px;
+  width: 32px;
+}
+
+.mobile-search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 160px;
+  padding: 6px 12px;
+  background-color: var(--vb-color-background-default, #F5F5F5);
+  border-radius: 25px;
+  gap: 8px;
+}
+
+.mobile-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: 'Hiragino Sans', sans-serif;
+  line-height: 1.5;
+  color: var(--vb-color-text-secondary, #6E6E6E);
+  min-width: 0;
+}
+
+.mobile-search-input::placeholder {
+  color: var(--vb-color-text-secondary, #6E6E6E);
+}
+
+.mobile-camera-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--vb-color-service-sell-blue, #0095D9);
+  flex-shrink: 0;
 }
 
 .mobile-right-icons {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
+  flex-shrink: 0;
 }
 
 .mobile-icon-button {
   background: none;
   border: none;
-  padding: 8px;
+  padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -283,12 +369,48 @@ const logoImage = '/designsystem/assets/images/header/logo.svg'
   height: 24px;
 }
 
-.camera-icon {
-  color: var(--vb-color-service-sell-blue, #0095D9);
+.mobile-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 16px;
+  gap: 8px;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--vb-color-text-primary, #2C2C2C);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Hiragino Sans', sans-serif;
+  line-height: 1.5;
+}
+
+.mobile-nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-nav-text {
+  white-space: nowrap;
+}
+
+.mobile-under-line {
+  height: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--vb-color-background-default, #F5F5F5);
 }
 
 /* レスポンシブ対応 */
 @media (max-width: 960px) {
+  .site-header {
+    height: auto !important;
+  }
+
   .header-desktop {
     display: none;
   }

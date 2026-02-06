@@ -9,8 +9,9 @@ on:
       # tokens
       - "src/styles/tokens.css"
 
-      # layout 配布物（あなたが public/shared/layout に置いている前提）
-      - "public/shared/layout/**"
+      # layout
+      - "src/components/layout/**"
+      - "src/components/icons/**"
 
       # header/footer で参照する画像（public に集約した前提）
       - "public/assets/images/**"

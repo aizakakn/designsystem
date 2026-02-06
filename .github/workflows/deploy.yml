@@ -44,22 +44,24 @@ jobs:
           set -eux
           ls -la public/shared/layout
 
-      - name: Copy shared layout into dist
+      - name: Copy shared layout into dist (from src)
         shell: bash
         run: |
           set -eux
           mkdir -p dist/shared/layout
-          cp -f public/shared/layout/AppLayout.vue  dist/shared/layout/AppLayout.vue
-          cp -f public/shared/layout/SiteHeader.vue dist/shared/layout/SiteHeader.vue
-          cp -f public/shared/layout/SiteFooter.vue dist/shared/layout/SiteFooter.vue
+          cp -f src/components/layout/AppLayout.vue  dist/shared/layout/AppLayout.vue
+          cp -f src/components/layout/SiteHeader.vue dist/shared/layout/SiteHeader.vue
+          cp -f src/components/layout/SiteFooter.vue dist/shared/layout/SiteFooter.vue
 
-      - name: Copy shared icons into dist
+
+      - name: Copy shared icons into dist (from src)
         shell: bash
         run: |
           set -eux
           mkdir -p dist/shared/icons
-          cp -f public/shared/icons/VBIcon.vue dist/shared/icons/VBIcon.vue
-          cp -f public/shared/icons/mdi.ts     dist/shared/icons/mdi.ts
+          cp -f src/components/icons/VBIcon.vue dist/shared/icons/VBIcon.vue
+          cp -f src/components/icons/mdi.ts     dist/shared/icons/mdi.ts
+
           
       - name: Debug dist/shared/icons
         shell: bash

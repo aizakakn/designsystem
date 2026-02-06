@@ -205,7 +205,7 @@
             <div class="footer-mobile-logo-wrapper">
               <div class="vb-logo-footer-mobile">
                 <img
-                  :src="vbLogo"
+                  :src="headerLogo"
                   alt="VALUE BOOKS"
                   class="footer-logo-image"
                 />
@@ -260,8 +260,10 @@
  * 画像は public/assets/images/footer に集約
  */
 const BASE = '/designsystem/assets/images/footer'
+const HEADER_BASE = '/designsystem/assets/images/header'
 
 const vbLogo = `${BASE}/vb_logo.svg`
+const headerLogo = `${HEADER_BASE}/logo.svg`
 const iconInstagram = `${BASE}/iconInstagram.svg`
 const iconTwitter = `${BASE}/iconTwitter.svg`
 const iconLine = `${BASE}/iconLine.svg`
@@ -293,8 +295,9 @@ const logoBcorp = `${BASE}/logo_bcorp.svg`
 .footer-main {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
+  gap: 40px;
 }
 
 .footer-left {

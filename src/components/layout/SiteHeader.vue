@@ -75,7 +75,7 @@
             <a href="/" class="mobile-logo-link">
               <div class="vb-logo-mobile">
                 <img
-                  :src="logoImage"
+                  :src="mobileLogoImage"
                   alt="VALUE BOOKS"
                   class="logo-image"
                 />
@@ -147,9 +147,11 @@ const toggleMobileMenu = () => {
 
 /**
  * ロゴは public 配下の静的ファイルを使う
- * public/assets/images/header/logo.svg
+ * デスクトップ: public/assets/images/header/logo.svg
+ * モバイル: public/assets/images/footer/vb_logo.svg
  */
 const logoImage = '/designsystem/assets/images/header/logo.svg'
+const mobileLogoImage = '/designsystem/assets/images/footer/vb_logo.svg'
 </script>
 
 <style scoped>
@@ -286,7 +288,7 @@ const logoImage = '/designsystem/assets/images/header/logo.svg'
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   padding-right: 16px;
 }
 
@@ -308,7 +310,8 @@ const logoImage = '/designsystem/assets/images/header/logo.svg'
 
 .vb-logo-mobile {
   height: 18px;
-  width: 32px;
+  width: auto;
+  max-width: 160px;
 }
 
 .mobile-search-box {
@@ -375,6 +378,7 @@ const logoImage = '/designsystem/assets/images/header/logo.svg'
   justify-content: space-between;
   width: 100%;
   padding: 8px 16px;
+  min-height: 40px;
   gap: 8px;
 }
 

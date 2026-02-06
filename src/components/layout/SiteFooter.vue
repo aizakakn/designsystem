@@ -16,7 +16,7 @@
             </div>
 
             <div class="sns-icons">
-              <a href="#" class="sns-link">
+              <a href="#" class="sns-link"> 
                 <img :src="iconInstagram" alt="Instagram" class="sns-icon" />
               </a>
               <a href="#" class="sns-link">

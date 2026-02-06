@@ -53,7 +53,7 @@
             />
           </div>
 
-          <a href="#" class="icon-link">
+          <a href="#" class="icon-link"> 
             <VBIcon name="account" label="ログイン" class="header-icon" />
           </a>
 

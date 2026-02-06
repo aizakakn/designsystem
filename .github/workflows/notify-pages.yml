@@ -30,7 +30,7 @@ jobs:
           repos=(
             "aizakakn/vb-point-ui"
             "aizakakn/vb-point-ui-B"
-            "aizakakn/vb-shitadori"
+            "aizakakn/shitadori"
           )
 
           for repo in "${repos[@]}"; do

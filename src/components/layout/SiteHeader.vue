@@ -65,9 +65,6 @@
 
       <!-- モバイル表示 -->
       <div class="header-mobile">
-        <!-- 上部線 -->
-        <div class="mobile-top-line"></div>
-        
         <!-- メイン部分 -->
         <div class="mobile-main-row">
           <!-- 左側: ロゴ + 検索ボックス -->
@@ -274,13 +271,9 @@ const mobileLogoImage = '/designsystem/assets/images/footer/vb_logo.svg'
   display: none;
   flex-direction: column;
   width: 100%;
+  height: 118px;
   background-color: var(--vb-color-base-white);
-}
-
-.mobile-top-line {
-  height: 4px;
-  width: 100%;
-  background-color: var(--vb-color-background-default, #F5F5F5);
+  position: relative;
 }
 
 .mobile-main-row {
@@ -288,14 +281,14 @@ const mobileLogoImage = '/designsystem/assets/images/footer/vb_logo.svg'
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  min-height: 50px;
+  height: 50px;
   padding-right: 16px;
 }
 
 .mobile-left-section {
   display: flex;
   align-items: center;
-  flex: 1;
+  flex: 1 0 0;
   min-width: 0;
   gap: 0;
 }
@@ -303,15 +296,17 @@ const mobileLogoImage = '/designsystem/assets/images/footer/vb_logo.svg'
 .mobile-logo-link {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 16px;
+  height: 50px;
+  width: 64px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
 .vb-logo-mobile {
   height: 18px;
-  width: auto;
-  max-width: 160px;
+  width: 32px;
 }
 
 .mobile-search-box {
@@ -378,7 +373,7 @@ const mobileLogoImage = '/designsystem/assets/images/footer/vb_logo.svg'
   justify-content: space-between;
   width: 100%;
   padding: 8px 16px;
-  min-height: 40px;
+  flex: 1;
   gap: 8px;
 }
 
@@ -404,15 +399,23 @@ const mobileLogoImage = '/designsystem/assets/images/footer/vb_logo.svg'
 }
 
 .mobile-under-line {
-  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
   width: 100%;
-  border-bottom: 1px solid var(--vb-color-background-default, #F5F5F5);
+  background-color: var(--vb-color-background-default, #F5F5F5);
 }
 
 /* レスポンシブ対応 */
 @media (max-width: 960px) {
   .site-header {
-    height: auto !important;
+    height: 118px !important;
+  }
+
+  .site-header :deep(.v-toolbar__content) {
+    height: 118px !important;
   }
 
   .header-desktop {

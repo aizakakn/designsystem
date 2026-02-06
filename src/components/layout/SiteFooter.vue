@@ -282,6 +282,14 @@ const logoBcorp = `${BASE}/logo_bcorp.svg`
   margin-top: auto;
 }
 
+.footer-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .footer-container {
   max-width: 1024px;
   margin: 0 auto;
@@ -295,9 +303,8 @@ const logoBcorp = `${BASE}/logo_bcorp.svg`
 .footer-main {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
-  gap: 40px;
 }
 
 .footer-left {
